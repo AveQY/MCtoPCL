@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.aweqy.mctopcl.WelcomeController"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 50;">
+    
+    <!-- 标题 -->
+    <Label text="MC存档管理工具" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+    
+    <!-- 提示信息 -->
+    <Label text="请选择PCL文件目录" style="-fx-font-size: 18px; -fx-text-fill: #666;"/>
+    
+    <!-- 选择目录按钮 -->
+    <Button text="选择目录" 
+            onAction="#onSelectDirectory"
+            style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 24; -fx-border-radius: 4; -fx-min-width: 150;"/>
+    
+</VBox>

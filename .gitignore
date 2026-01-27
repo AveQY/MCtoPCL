@@ -1,0 +1,80 @@
+# Build directories
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+target
+
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# Local configuration files
+*.properties
+cloud_storage_config.properties
+config.properties
+online-config.properties
+
+# Script files
+*.bat
+*.sh
+Build-Installer.ps1
+
+# IDE configurations
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# OS generated files
+### Mac OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Executable files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Service side target directory
+service-side/target/
+
+# WiX installer files
+*.wixobj
+*.wixpdb
+*.msi
+
+# JavaFX SDK
+javafx-sdk-*.zip

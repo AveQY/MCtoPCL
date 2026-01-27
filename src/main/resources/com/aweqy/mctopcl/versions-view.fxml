@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.aweqy.mctopcl.VersionsController"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 50;">
+    
+    <!-- 标题 -->
+    <Label text="MC存档管理工具" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+    
+    <!-- 提示信息 -->
+    <Label text="请选择游戏版本" style="-fx-font-size: 18px; -fx-text-fill: #666;"/>
+    
+    <!-- 版本列表 -->
+    <ListView fx:id="versionsList" 
+              style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-min-width: 300; -fx-min-height: 200;"/>
+    
+    <!-- 按钮区域 -->
+    <VBox alignment="CENTER" spacing="15.0">
+        <Button text="选择版本" 
+                onAction="#onSelectVersion"
+                style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 4; -fx-min-width: 120;"/>
+        <Button text="重新选择目录" 
+                onAction="#onBackToWelcome"
+                style="-fx-font-size: 14px; -fx-background-color: #f5f5f5; -fx-text-fill: #666; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8 16; -fx-min-width: 120;"/>
+    </VBox>
+    
+</VBox>

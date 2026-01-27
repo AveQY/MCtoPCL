@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="MCtoPCL" Language="2052" Codepage="936" Version="1.0.0.0" Manufacturer="AWEQY" UpgradeCode="12345678-1234-1234-1234-123456789012">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Description="MC Server Port Forwarding Tool" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of MCtoPCL is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="MCtoPCL" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="MCtoPCL" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="MCtoPCL"/>
+      </Directory>
+    </Directory>
+
+    <Component Id="ApplicationShortcut" Directory="ApplicationProgramsFolder">
+      <Shortcut Id="ApplicationStartMenuShortcut"
+                Name="MCtoPCL"
+                Description="MC Server Port Forwarding Tool"
+                Target="[#Run_MCtoPCL_ps1]"
+                WorkingDirectory="INSTALLFOLDER"/>
+      <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+      <RegistryValue Root="HKCU" Key="Software\Microsoft\MCtoPCL" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+    </Component>
+    
+    <Property Id="JAVA_HOME">
+      <RegistrySearch Id="JavaHomeRegSearch" Root="HKLM" Key="SOFTWARE\JavaSoft\Java Runtime Environment" Name="JavaHome" Type="raw"/>
+    </Property>
+    
+    <Condition Message="This application requires Java 17 or higher. Please install Java and try again.">
+      <![CDATA[Installed OR JAVA_HOME]]>
+    </Condition>
+  </Product>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- PowerShell启动脚本 -->
+      <Component Id="Run_MCtoPCL_ps1">
+        <File Id="Run_MCtoPCL_ps1" Source="Run_MCtoPCL.ps1" KeyPath="yes"/>
+      </Component>
+      
+      <!-- JAR文件 -->
+      <Component Id="MCtoPCL_jar">
+        <File Id="MCtoPCL_jar" Source="target\MCtoPCL-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
+      </Component>
+      
+      <!-- 批处理启动脚本 -->
+      <Component Id="Start_MCtoPCL_bat">
+        <File Id="Start_MCtoPCL_bat" Source="Start_MCtoPCL.bat"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

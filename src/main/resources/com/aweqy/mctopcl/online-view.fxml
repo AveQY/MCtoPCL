@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.aweqy.mctopcl.OnlineController" 
+      style="-fx-background-color: #f5f5f5;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- 标题区域 -->
+    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 0 10 0;">
+        <Label text="内网穿透设置" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+        <Label fx:id="statusLabel" text="未连接" style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+    </VBox>
+    
+    <Separator/>
+    
+    <!-- 服务器设置区域 -->
+    <VBox spacing="10.0">
+        <Label text="服务器设置" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="服务器地址:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="serverAddress" text="localhost" prefWidth="300" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="服务器端口:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="serverPort" text="8080" prefWidth="150" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="连接密码:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="connectionPassword" text="" prefWidth="300" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+    </VBox>
+    
+    <!-- 转发设置区域 -->
+    <VBox spacing="10.0">
+        <Label text="转发设置" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="协议类型:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <ChoiceBox fx:id="protocolType" prefWidth="150" 
+                      style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="本地地址:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="localAddress" text="localhost" prefWidth="300" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="本地端口:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="localPort" text="25565" prefWidth="150" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+        
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="远程端口:" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-pref-width: 100;"/>
+            <TextField fx:id="remotePort" text="" prefWidth="150" 
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-padding: 8;"/>
+        </HBox>
+    </VBox>
+    
+    <!-- 操作按钮区域 -->
+    <HBox spacing="15.0" alignment="CENTER_LEFT">
+        <Button fx:id="connectButton" text="连接" onAction="#onConnect" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-border-radius: 4;"/>
+        <Button fx:id="disconnectButton" text="断开" onAction="#onDisconnect" 
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-border-radius: 4;"/>
+        <Button text="关闭" onAction="#onClose" 
+                style="-fx-background-color: #f5f5f5; -fx-text-fill: #666; -fx-border-color: #ddd; -fx-padding: 8 16; -fx-border-radius: 4;"/>
+    </HBox>
+    
+    <!-- 作者标注 -->
+    <Label text="by 不会吸猫" style="-fx-font-size: 12px; -fx-text-fill: #999; -fx-padding: 10 0 0 0;"/>
+</VBox>
