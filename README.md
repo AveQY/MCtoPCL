@@ -116,7 +116,7 @@ MCtoPCL是一个专为Minecraft玩家设计的存档管理工具，提供本地�
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/yourusername/MCtoPCL.git
+   git clone https://github.com/AveQY/MCtoPCL.git
    cd MCtoPCL
    ```
 
@@ -187,10 +187,6 @@ MCtoPCL/
 ### 其他
 - **SLF4J** - 日志框架
 - **JUnit 5** - 单元测试框架
-
-## 📄 许可证
-
-本项目采用 **MIT许可证**，详见 [LICENSE](LICENSE) 文件。
 
 ## 🤝 贡献
 
