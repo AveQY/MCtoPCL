@@ -5,7 +5,6 @@ build/
 !**/src/test/**/target/
 !**/src/main/**/build/
 !**/src/test/**/build/
-target
 
 # Maven wrapper
 !.mvn/wrapper/maven-wrapper.jar

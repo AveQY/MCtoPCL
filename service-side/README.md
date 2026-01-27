@@ -69,6 +69,10 @@ java -jar target/server-side-1.0-SNAPSHOT-jar-with-dependencies.jar
 3. **定期更新**：定期检查并更新服务端代码
 4. **限制访问**：如可能，限制只有特定IP可以访问服务器
 
+## 服务端配置
+
+完善 service-side/src/main/resources/server.properties 配置
+
 ## 客户端配置
 
 客户端（MCtoPCL应用）需要配置以下信息：
